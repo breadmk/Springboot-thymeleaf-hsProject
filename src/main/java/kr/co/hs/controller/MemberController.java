@@ -1,11 +1,13 @@
 package kr.co.hs.controller;
 
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,6 +21,13 @@ public class MemberController {
 	
 	@Autowired
 	MemberService memberService;
+	
+	@GetMapping("/member/admin")
+	public String memberAdmin(Model model) {
+		List<MemberModel> list = memberService.getAll();
+		model.addAttribute("memberList",list);
+		return "/view/member/admin";
+	}
 	
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {

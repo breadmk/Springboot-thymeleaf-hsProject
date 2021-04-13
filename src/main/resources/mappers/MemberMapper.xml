@@ -12,4 +12,7 @@
 		select count(*) from hsMember where userId= #{userId} and pwd = #{pwd}
 	</select>
 
+	<select id="getAll" resultType="kr.co.hs.member.model.MemberModel">
+		select * from hsMember
+	</select>
 </mapper>
