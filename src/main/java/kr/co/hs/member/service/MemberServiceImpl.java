@@ -29,5 +29,20 @@ public class MemberServiceImpl implements MemberService{
 		return memberRepository.getAll();
 	}
 
+	@Override
+	public MemberModel getOne(int no) {
+		return memberRepository.getOne(no);
+	}
+
+	@Override
+	public int update(MemberModel memberModel) {
+		return memberRepository.update(memberModel);
+	}
+
+	@Override
+	public int deleteOk(int no) {
+		return memberRepository.deleteOk(no);
+	}
+
 	
 }

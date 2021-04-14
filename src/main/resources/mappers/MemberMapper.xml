@@ -15,4 +15,17 @@
 	<select id="getAll" resultType="kr.co.hs.member.model.MemberModel">
 		select * from hsMember
 	</select>
+	
+	<select id="getOne" resultType="kr.co.hs.member.model.MemberModel" parameterType="Integer">
+		select * from hsMember where no = #{no}
+	</select>
+	
+	<update id="update" parameterType="kr.co.hs.member.model.MemberModel">
+		update hsMember set userId=#{userId},userName=#{userName},email=#{email},zipcode=#{zipcode},
+			addr=#{addr},addrDetail=#{addrDetail} where no = #{no}
+	</update>
+	
+	<delete id="deleteOk" parameterType="Integer">
+		delete from hsMember where no = #{no}
+	</delete>
 </mapper>

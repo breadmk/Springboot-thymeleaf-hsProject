@@ -14,12 +14,14 @@
       </tr>
     </thead>
     <tbody>
-      <tr  th:each="member : ${memberList}">
+      <tr th:each="member : ${memberList}" class="info">
+      	<input type="hidden" th:value="${member.no}" class="memberNo">
         <td th:text="${member.userId}">John</td>
         <td th:text="${member.userName}">Doe</td>
       </tr>
     </tbody>
   </table>
 </div>
+<script src="../js/memberAdmin.js"></script>
 </th:block>
 </html>

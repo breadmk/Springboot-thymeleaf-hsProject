@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/default">
+
+<th:block layout:fragment="content">
+<div class="container">
+  <h2>회원 정보 수정</h2>
+ <form action="/member/update" method="post">
+ <input type="hidden" th:value="${vo.no}" name="no">
+  <table class="table">
+      <tr>
+        <th>no</th>
+        <td><input type="text" th:value="${vo.no}" readonly="readonly"></td>
+      </tr>
+      <tr>
+        <th>userId</th>
+        <td><input type="text" th:value="${vo.userId}" name="userId"></td>
+      </tr>
+      <tr>
+        <th>userName</th>
+        <td><input type="text" th:value="${vo.userName}" name="userName"></td>
+      </tr>
+      <tr>
+        <th>email</th>
+        <td><input type="text" th:value="${vo.email}" name="email"></td>
+	  </tr>
+	  <tr>
+	    <th>우편번호</th>
+	  	<td>
+	  		<div>
+				<input class="form-control" style="width: 40%; display: inline;" 
+					   th:value="${vo.zipcode}" name="zipcode" id="addr1" type="text" readonly="readonly">
+				<button type="button" class="btn btn-info" id="searAddrBtn">주소검색</button>
+			</div>
+	  	</td>
+	  </tr>
+	  <tr>
+	    <th>도로명주소</th>
+	  	<td>
+			<div class="field">
+				<input class="form-control" style="top: 5px;" 
+					   th:value="${vo.addr}" name="addr" id="addr2" type="text" readonly="readonly" />
+			</div>
+	  	</td>
+	  </tr>
+	  <tr>
+	    <th>상세주소</th>
+	  	<td>
+			<div class="field">
+				<input class="form-control" th:value="${vo.addrDetail}" name="addrDetail"
+					id="addrDetail" type="text" />
+			</div>
+	  	</td>
+	  </tr>
+	  <tr>
+	  	<td colspan="3" align="center">
+	  		<input type="submit" class="btn btn-success update" value="수정하기"></button>
+	  	</td>
+	  </tr>
+  </table>
+ </form>
+</div>
+<script src="../../js/memberUpdate.js"></script>
+</th:block>
+</html>

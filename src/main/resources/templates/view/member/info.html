@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/default">
+
+<th:block layout:fragment="content">
+<div class="container">
+  <h2>회원 상세 조회</h2>
+  <table class="table">
+      <tr>
+        <th>no</th>
+        <td th:text="${vo.no}" id="memberNo">no</td>
+      </tr>
+      <tr>
+        <th>userId</th>
+        <td th:text="${vo.userId}">userId</td>
+      </tr>
+      <tr>
+        <th>userName</th>
+        <td th:text="${vo.userName}">userName</td>
+      </tr>
+      <tr>
+        <th>email</th>
+        <td th:text="${vo.email}">email</td>
+	  </tr>
+	  <tr>
+        <th>addr</th>
+      	<td th:text="|${vo.zipcode} ${vo.addr} ${vo.addrDetail}|">addr</td>	
+	  </tr>
+	  <tr>
+	  	<td colspan="3">
+	  		<button class="btn btn-dark list">목록</button>
+	  		<button class="btn btn-success update">수정</button>
+	  		<button class="btn btn-danger deleteOk">삭제</button>
+	  	</td>
+	  </tr>
+  </table>
+</div>
+<script src="../../js/memberInfo.js"></script>
+</th:block>
+</html>
