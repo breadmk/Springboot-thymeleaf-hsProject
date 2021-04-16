@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/default">
+
+<th:block layout:fragment="content">
+<div class="container">
+	 <h2>상품등록</h2>
+	<form method="post">
+		<div class="form-group">
+			<label for="productName">상품명</label>
+			<input type="text" class="form-control" placeholder="상품명을 입력하세요" id="productName" name="productName">
+		</div>
+		<div class="form-group">
+			<label for="userName">단위</label><br>
+			<select>
+				<option>Kg</option>
+				<option>개</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="password">단가</label> 
+			<input type="password" class="form-control" placeholder="단가를 입력" id="password" name="pwd">
+		</div>
+		<div class="form-group">
+			<label for="password">수정</label> 
+			<input type="password" class="form-control" placeholder="Enter password" id="password">
+		</div>
+		<div class="form-group">
+			<label for="email">수정</label> 
+			<input type="text" class="form-control" placeholder="Enter email" id="email" name="email">
+		</div>
+	</form>
+	<br>
+	<button id="join" class="btn btn-primary">물품등록완료</button>
+</div>
+</th:block>
+</html>
